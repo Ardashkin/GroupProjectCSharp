@@ -1,0 +1,4 @@
+D:\Игры\C#\InternetShopPrivate\WebShop.Models\bin\Debug\WebShop.Models.dll
+D:\Игры\C#\InternetShopPrivate\WebShop.Models\bin\Debug\WebShop.Models.pdb
+D:\Игры\C#\InternetShopPrivate\WebShop.Models\obj\Debug\WebShop.Models.dll
+D:\Игры\C#\InternetShopPrivate\WebShop.Models\obj\Debug\WebShop.Models.pdb

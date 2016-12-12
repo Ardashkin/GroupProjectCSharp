@@ -1,0 +1,9 @@
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\WebShop.DAL.dll.config
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\WebShop.DAL.dll
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\WebShop.DAL.pdb
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\EntityFramework.dll
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\EntityFramework.xml
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\obj\Debug\WebShop.DAL.dll
+D:\Игры\C#\InternetShopPrivate\WebShop.DAL\obj\Debug\WebShop.DAL.pdb

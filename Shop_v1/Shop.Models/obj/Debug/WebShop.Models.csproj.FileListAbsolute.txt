@@ -1,0 +1,5 @@
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.Models\bin\Debug\WebShop.Models.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.Models\bin\Debug\WebShop.Models.pdb
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.Models\obj\Debug\WebShop.Models.csprojResolveAssemblyReference.cache
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.Models\obj\Debug\WebShop.Models.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.Models\obj\Debug\WebShop.Models.pdb

@@ -1,0 +1,12 @@
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\WebShop.DAL.Repository.dll.config
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\WebShop.DAL.Repository.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\WebShop.DAL.Repository.pdb
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\EntityFramework.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\WebShop.DAL.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\WebShop.DAL.pdb
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\EntityFramework.xml
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\obj\Debug\WebShop.DAL.Repository.csprojResolveAssemblyReference.cache
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\obj\Debug\WebShop.DAL.Repository.dll
+C:\Users\руслан\Downloads\InternetShopPrivate\WebShop.DAL.Repository\obj\Debug\WebShop.DAL.Repository.pdb
