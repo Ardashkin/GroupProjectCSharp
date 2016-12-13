@@ -7,38 +7,32 @@ using System.Runtime.Serialization;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Collections;
+using System.Collections.Specialized;
 
 namespace DomainModel
 {
     [DataContract]
-    public abstract class BaseModel : INotifyPropertyChanged, INotifyDataErrorInfo
+    public abstract class BaseModel : INotifyPropertyChanged, IDataErrorInfo
     {
-        public bool HasErrors
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         [DataMember]
         [Key]
         public Guid Id { get; set; }
 
-        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public IEnumerable GetErrors(string propertyName)
-        {
-            throw new NotImplementedException();
-        }
 
         public virtual void OnPropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null)
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                handler(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public virtual string this[string propertyName] { get { return Error; } }
+        public virtual string Error
+        {
+            get { return String.Empty; }
         }
     }
 }

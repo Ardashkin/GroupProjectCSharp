@@ -11,7 +11,7 @@ using System.Runtime.Serialization;
 namespace DomainModel
 {
     [DataContract]
-    public class User : BaseModel
+    public sealed class User : BaseModel
     {
         private string firstName;
         private string lastName;
@@ -52,7 +52,7 @@ namespace DomainModel
             }
         }
         [DataMember]
-        [Required]
+        [Required(ErrorMessage = "Login is required")]
         public string Login
         {
             get { return login; }
@@ -63,7 +63,7 @@ namespace DomainModel
             }
         }
         [DataMember]
-        [Required]
+        [Required(ErrorMessage = "Password is required")]
         public string Password
         {
             get { return password; }
@@ -74,7 +74,7 @@ namespace DomainModel
             }
         }
         [DataMember]
-        [Required]
+        [Required(ErrorMessage = "Phone is required")]
         public string Phone
         {
             get { return phone; }
@@ -104,6 +104,20 @@ namespace DomainModel
                 userType = value;
                 OnPropertyChanged(nameof(this.UserType));
             }
+        }
+        public override string ToString()
+        {
+            return String.Format("Id->{0}\nFirst name->{1}\nLast name->{2}\nPatronimic->{3}\nLogin->{4}\nPassword->{5}\nPhone->{6}\nAddress->{7}\nUser type->{8}\n",
+                this.Id,
+                this.FirstName,
+                this.LastName,
+                this.Patronimic,
+                this.Login,
+                this.Password,
+                this.Phone,
+                this.Address,
+                Enum.GetName(typeof(UserType), this.UserType)
+                );
         }
     }
 }
