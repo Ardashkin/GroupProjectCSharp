@@ -9,26 +9,26 @@ using DomainModel;
 
 namespace Repository
 {
-    public class Repository<T> : IRepository<T> where T : BaseModel
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel, new()
     {
-        protected readonly ShopContext<T> shopContext;
+        protected readonly ShopContext<TEntity> shopContext;
         public Repository()
         {
-            shopContext = new ShopContext<T>();
+            shopContext = new ShopContext<TEntity>();
         }
-        public void Create(T item)
+        public void Create(TEntity item)
         {
             if (item != null)
             {
                 shopContext.Items.Add(item);
             }
         }
-        public IEnumerable<T> GetItems()
+        public IEnumerable<TEntity> GetItems()
         {
             return shopContext.Items;
         }
 
-        public void Update(T item)
+        public void Update(TEntity item)
         {
             if (item != null)
             {
@@ -36,7 +36,7 @@ namespace Repository
             }
         }
 
-        public void Delete(T item)
+        public void Delete(TEntity item)
         {
             if (item != null)
             {

@@ -16,7 +16,7 @@ using Client.ViewModel;
 using DomainModel;
 using DataAccessLayer;
 
-namespace Client
+namespace Client.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -9,24 +9,24 @@ using DomainModel;
 
 namespace Server
 {
-    public class ShopServiceBase<T> : IShopServiceBase<T>, IEntry<T> where T : BaseModel
+    public class ShopServiceBase<TEntity> : IShopServiceBase<TEntity>, IEntry<TEntity> where TEntity : BaseModel, new()
     {
-        protected readonly IRepository<T> repository;
+        protected readonly IRepository<TEntity> repository;
 
-        public event EntryCreateEventHandler<T> CreateEvent;
-        public event EntryUpdateEventHandler<T> UpdateEvent;
-        public event EntryDeleteEventHandler<T> DeleteEvent;
-        public event EntrySaveDataEventHandler<T> SaveEvent;
+        public event EntryCreateEventHandler<TEntity> CreateEvent;
+        public event EntryUpdateEventHandler<TEntity> UpdateEvent;
+        public event EntryDeleteEventHandler<TEntity> DeleteEvent;
+        public event EntrySaveDataEventHandler<TEntity> SaveEvent;
 
         public ShopServiceBase()
         {
-            repository = new Repository<T>();
-            CreateEvent += new EntryCreateEventHandler<T>(OnCreateEventHandler);
-            UpdateEvent += new EntryUpdateEventHandler<T>(OnUpdateEventHandler);
-            DeleteEvent += new EntryDeleteEventHandler<T>(OnDeleteEventHandler);
-            SaveEvent += new EntrySaveDataEventHandler<T>(OnSaveEventHandler);
+            repository = new Repository<TEntity>();
+            CreateEvent += new EntryCreateEventHandler<TEntity>(OnCreateEventHandler);
+            UpdateEvent += new EntryUpdateEventHandler<TEntity>(OnUpdateEventHandler);
+            DeleteEvent += new EntryDeleteEventHandler<TEntity>(OnDeleteEventHandler);
+            SaveEvent += new EntrySaveDataEventHandler<TEntity>(OnSaveEventHandler);
         }
-        public void Create(T item)
+        public void Create(TEntity item)
         {
             repository.Create(item);
             OnCreateEvent(item);
@@ -34,12 +34,12 @@ namespace Server
             OnSaveEvent(item);
         }
 
-        public IEnumerable<T> GetItems()
+        public IEnumerable<TEntity> GetItems()
         {
             return repository.GetItems();
         }
 
-        public void Update(T item)
+        public void Update(TEntity item)
         {
             repository.Update(item);
             OnUpdateEvent(item);
@@ -47,54 +47,54 @@ namespace Server
             OnSaveEvent(item);
         }
 
-        public void Delete(T item)
+        public void Delete(TEntity item)
         {
             repository.Delete(item);
             OnDeleteEvent(item);
             repository.Save();
             OnSaveEvent(item);
         }
-        protected virtual void OnCreateEvent(T item)
+        protected virtual void OnCreateEvent(TEntity item)
         {
             if (CreateEvent != null)
             {
-                CreateEvent(this, new EntryEventArgs<T>(item));
+                CreateEvent(this, new EntryEventArgs<TEntity>(item));
             }
         }
-        protected virtual void OnUpdateEvent(T item)
+        protected virtual void OnUpdateEvent(TEntity item)
         {
             if (UpdateEvent != null)
             {
-                UpdateEvent(this, new EntryEventArgs<T>(item));
+                UpdateEvent(this, new EntryEventArgs<TEntity>(item));
             }
         }
-        protected virtual void OnDeleteEvent(T item)
+        protected virtual void OnDeleteEvent(TEntity item)
         {
             if (DeleteEvent != null)
             {
-                DeleteEvent(this, new EntryEventArgs<T>(item));
+                DeleteEvent(this, new EntryEventArgs<TEntity>(item));
             }
         }
-        protected virtual void OnSaveEvent(T item)
+        protected virtual void OnSaveEvent(TEntity item)
         {
             if (SaveEvent != null)
             {
-                SaveEvent(this, new EntryEventArgs<T>(item));
+                SaveEvent(this, new EntryEventArgs<TEntity>(item));
             }
         }
-        protected virtual void OnCreateEventHandler(object sender, EntryEventArgs<T> e)
+        protected virtual void OnCreateEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
             Log.Write("New item of " + e.Item.GetType().Name + " model was created:\n" + e.Item.ToString());
         }
-        protected virtual void OnUpdateEventHandler(object sender, EntryEventArgs<T> e)
+        protected virtual void OnUpdateEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
             Log.Write("Item of " + e.Item.GetType().Name + " model was updated:\n" + e.Item.ToString());
         }
-        protected virtual void OnDeleteEventHandler(object sender, EntryEventArgs<T> e)
+        protected virtual void OnDeleteEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
             Log.Write("Item of " + e.Item.GetType().Name + " model was deleted:\n" + e.Item.ToString());
         }
-        protected virtual void OnSaveEventHandler(object sender, EntryEventArgs<T> e)
+        protected virtual void OnSaveEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
             Log.Write("Data of " + e.Item.GetType().Name + " model was saved:\n" + e.Item.ToString());
         }

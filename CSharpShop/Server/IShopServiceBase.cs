@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace Server
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IShopServiceBase" in both code and config file together.
     [ServiceContract]
-    public interface IShopServiceBase<T>
+    public interface IShopServiceBase<TEntity>
     {
         [OperationContract]
-        void Create(T item);
+        [WebInvoke(Method ="PUT", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "NewItem/")]
+        void Create(TEntity item);
         [OperationContract]
-        IEnumerable<T> GetItems();
+        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetItems/")]
+        IEnumerable<TEntity> GetItems();
         [OperationContract]
-        void Update(T item);
+        [WebInvoke(Method = "PUT", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "UpdateItem/")]
+        void Update(TEntity item);
         [OperationContract]
-        void Delete(T item);
+        [WebInvoke(Method = "DELETE", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "DeleteItem/")]
+        void Delete(TEntity item);
     }
 }
