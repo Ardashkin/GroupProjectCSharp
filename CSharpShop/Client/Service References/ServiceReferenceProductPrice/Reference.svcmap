@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7392800e-9715-410c-b754-c776a0c45d23" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60815/ShopServiceProductPrice.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ShopServiceProductPrice.xsd" MetadataType="Schema" ID="20908a45-b455-4d2c-b996-d106e6196611" SourceId="1" SourceUrl="http://localhost:60815/ShopServiceProductPrice.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShopServiceProductPrice1.xsd" MetadataType="Schema" ID="8532326c-96fa-441c-81db-c39712e4ffec" SourceId="1" SourceUrl="http://localhost:60815/ShopServiceProductPrice.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShopServiceProductPrice.wsdl" MetadataType="Wsdl" ID="08113871-296c-4f7e-ae66-495c9f3beb5d" SourceId="1" SourceUrl="http://localhost:60815/ShopServiceProductPrice.svc?wsdl" />
+    <MetadataFile FileName="ShopServiceProductPrice2.xsd" MetadataType="Schema" ID="b81e23f1-a6e9-4cd0-bd00-748d56c18f1a" SourceId="1" SourceUrl="http://localhost:60815/ShopServiceProductPrice.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShopServiceProductPrice.disco" MetadataType="Disco" ID="e755b3b0-16b3-466f-9047-de381b59abe0" SourceId="1" SourceUrl="http://localhost:60815/ShopServiceProductPrice.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
