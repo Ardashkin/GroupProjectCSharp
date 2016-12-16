@@ -67,14 +67,10 @@ namespace Client.ViewModel
         {
             return selectedItem != default(T);
         }
-        protected virtual void RemoveItemCommandExecute(object obj)
-        {
-            Messenger.Instance.Send(new Action<bool>(RemoveItemCommandApply), "Remove Command Apply");
-        }
         public abstract void GetData();
         protected abstract void OpenViewCommandExecute(object obj);
         protected abstract void EditItemCommandExecute(object obj);
         protected abstract void OpenedViewCommandExecute(object obj);
-        protected abstract void RemoveItemCommandApply(bool flag);
+        protected abstract void RemoveItemCommandExecute(object obj);
     }
 }

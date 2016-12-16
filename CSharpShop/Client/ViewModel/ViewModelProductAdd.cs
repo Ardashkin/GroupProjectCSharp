@@ -22,7 +22,6 @@ namespace Client.ViewModel
         protected override void AddItemCommandExecute(object obj)
         {
             productService.Create(Item);
-            Messenger.Instance.Send("Adding of new Product complete");
         }
     }
 }

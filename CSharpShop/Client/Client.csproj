@@ -66,8 +66,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Component\IMessenger.cs" />
-    <Compile Include="Component\Messenger.cs" />
     <Compile Include="Component\RelayCommand.cs" />
     <Compile Include="Service References\ServiceReferenceOrderProduct\Reference.cs">
       <AutoGen>True</AutoGen>

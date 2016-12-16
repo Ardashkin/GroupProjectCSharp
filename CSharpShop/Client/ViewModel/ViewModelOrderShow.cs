@@ -26,16 +26,15 @@ namespace Client.ViewModel
         }
         protected override void OpenViewCommandExecute(object obj)
         {
-            Messenger.Instance.Send("Open Order view");
             GetData();
         }
         protected override void OpenedViewCommandExecute(object obj)
         {
             GetData();
         }
-        protected override void RemoveItemCommandApply(bool isOk)
+        protected override void RemoveItemCommandExecute(object obj)
         {
-            if (isOk)
+            if (RemoveItemCommandCanExecute(obj))
             {
                 orderService.Delete(SelectedItem);
                 GetData();
@@ -50,7 +49,6 @@ namespace Client.ViewModel
                 Status = this.SelectedItem.Status,
                 UserId = this.SelectedItem.UserId
             };
-            Messenger.Instance.Send(order, "Edit order view");
             GetData();
         }
     }

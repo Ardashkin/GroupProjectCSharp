@@ -13,7 +13,6 @@ namespace Client.ViewModel
         protected readonly T item;
 
         protected RelayCommand addItemCommand;
-        protected RelayCommand closeAddViewCommand;
 
         public T Item
         {
@@ -33,21 +32,6 @@ namespace Client.ViewModel
                 }
                 return addItemCommand;
             }
-        }
-        public virtual ICommand CloseAddViewCommand
-        {
-            get
-            {
-                if (closeAddViewCommand == null)
-                {
-                    addItemCommand = new RelayCommand(CloseAddViewCommandExecute);
-                }
-                return addItemCommand;
-            }
-        }
-        protected virtual void CloseAddViewCommandExecute(object obj)
-        {
-            Messenger.Instance.Send("Add view closed");
         }
         protected abstract bool AddItemCommandCanExecute(object obj);
         protected abstract void AddItemCommandExecute(object obj);

@@ -23,7 +23,6 @@ namespace Client.ViewModel
         protected override void EditItemCommandExecute(object obj)
         {
             productService.Update(SelectedItem);
-            Messenger.Instance.Send("Product edition complete");
         }
     }
 }

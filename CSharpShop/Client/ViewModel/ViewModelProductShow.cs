@@ -28,16 +28,15 @@ namespace Client.ViewModel
         }
         protected override void OpenViewCommandExecute(object obj)
         {
-            Messenger.Instance.Send("Open Product view");
             GetData();
         }
         protected override void OpenedViewCommandExecute(object obj)
         {
             GetData();
         }
-        protected override void RemoveItemCommandApply(bool isOk)
+        protected override void RemoveItemCommandExecute(object obj)
         {
-            if (isOk)
+            if (RemoveItemCommandCanExecute(obj))
             {
                 shopService.Delete(SelectedItem);
                 GetData();
@@ -52,7 +51,6 @@ namespace Client.ViewModel
                 ProductPriceId = this.SelectedItem.ProductPriceId,
                 Title = this.SelectedItem.Title
             };
-            Messenger.Instance.Send(product, "Edit Product view");
             GetData();
         }
     }

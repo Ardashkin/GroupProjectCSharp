@@ -24,7 +24,6 @@ namespace Client.ViewModel
         protected override void AddItemCommandExecute(object obj)
         {
             userService.Create(Item);
-            Messenger.Instance.Send("Adding of new User complete");
         }
 
     }

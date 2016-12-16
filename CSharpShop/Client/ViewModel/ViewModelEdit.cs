@@ -11,7 +11,7 @@ namespace Client.ViewModel
     public abstract class ViewModelEdit<T> : ViewModelBase<T> where T : class
     {
         protected RelayCommand editItemCommand;
-        protected RelayCommand closeEditViewCommand;
+
         public virtual ICommand EditItemCommand
         {
             get
@@ -22,21 +22,6 @@ namespace Client.ViewModel
                 }
                 return editItemCommand;
             }
-        }
-        public virtual ICommand CloseEditViewCommand
-        {
-            get
-            {
-                if (closeEditViewCommand == null)
-                {
-                    closeEditViewCommand = new RelayCommand(CloseEditCommandExecute);
-                }
-                return closeEditViewCommand;
-            }
-        }
-        protected virtual void CloseEditCommandExecute(object obj)
-        {
-            Messenger.Instance.Send("Edit view closed");
         }
         protected abstract bool EditItemCommandCanExecute(object obj);
         protected abstract void EditItemCommandExecute(object obj);
