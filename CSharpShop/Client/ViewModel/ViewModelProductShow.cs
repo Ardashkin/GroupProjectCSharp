@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainModel;
-using Client.Component;
-using System.Windows.Input;
 
 namespace Client.ViewModel
 {
