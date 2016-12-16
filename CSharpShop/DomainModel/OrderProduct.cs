@@ -5,19 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DomainModel
 {
     [DataContract]
-    public sealed class OrderProduct : BaseModel
+    public class OrderProduct : BaseModel
     {
         private int quantity;
         [DataMember]
         [Required]
+        [ForeignKey("Order")]
         public Guid OrderId { get; set; }
+        public virtual Order Order { get; set; }
         [DataMember]
         [Required]
+        [ForeignKey("Product")]
         public Guid ProductId { get; set; }
+        public virtual Product Product { get; set; }
         [DataMember]
         [Required(ErrorMessage ="Quantity is required")]
         public int Quantity

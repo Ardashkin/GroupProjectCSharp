@@ -1,34 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainModel;
 using Client.Component;
-using System.Windows.Input;
 
 namespace Client.ViewModel
 {
-    public class ViewModelProductShow : ViewModelShow<Product>
+    public class ViewModelOrderShow : ViewModelShow<Order>
     {
-        private readonly ServiceReferenceProduct.IShopServiceBaseOf_Product shopService;
-
-        public ViewModelProductShow(ServiceReferenceProduct.IShopServiceBaseOf_Product shopService)
+        private readonly ServiceReferenceOrder.IShopServiceBaseOf_Order orderService;
+        public ViewModelOrderShow(ServiceReferenceOrder.IShopServiceBaseOf_Order orderService)
         {
-            this.shopService = shopService;
+            this.orderService = orderService;
         }
+
         public override void GetData()
         {
             Reset();
-            foreach (var element in shopService.GetItems())
+            foreach (var element in orderService.GetItems())
             {
                 obsCollection.Add(element);
             }
         }
         protected override void OpenViewCommandExecute(object obj)
         {
-            Messenger.Instance.Send("Open Product view");
+            Messenger.Instance.Send("Open Order view");
             GetData();
         }
         protected override void OpenedViewCommandExecute(object obj)
@@ -39,20 +37,20 @@ namespace Client.ViewModel
         {
             if (isOk)
             {
-                shopService.Delete(SelectedItem);
+                orderService.Delete(SelectedItem);
                 GetData();
             }
         }
         protected override void EditItemCommandExecute(object obj)
         {
-            Product product = new Product
+            Order order = new Order
             {
                 Id = Guid.NewGuid(),
-                Description = this.SelectedItem.Description,
-                ProductPriceId = this.SelectedItem.ProductPriceId,
-                Title = this.SelectedItem.Title
+                OrderProducts = this.SelectedItem.OrderProducts,
+                Status = this.SelectedItem.Status,
+                UserId = this.SelectedItem.UserId
             };
-            Messenger.Instance.Send(product, "Edit Product view");
+            Messenger.Instance.Send(order, "Edit order view");
             GetData();
         }
     }

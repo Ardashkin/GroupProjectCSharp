@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DomainModel
 {
     [DataContract]
-    public sealed class Product : BaseModel
+    public class Product : BaseModel
     {
         private string title;
         private string description;
@@ -26,7 +27,9 @@ namespace DomainModel
         }
         [DataMember]
         [Required]
+        [ForeignKey("ProductPrice")]
         public Guid ProductPriceId { get; set; }
+        public virtual ProductPrice Price { get; set; }
         [DataMember]
         public string Description
         {

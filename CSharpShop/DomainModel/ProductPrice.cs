@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DomainModel
 {
     [DataContract]
-    public sealed class ProductPrice : BaseModel
+    public class ProductPrice : BaseModel
     {
         private double price;
         private DateTime effectiveDate;
