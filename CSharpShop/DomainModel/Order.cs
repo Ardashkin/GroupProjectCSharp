@@ -15,7 +15,6 @@ namespace DomainModel
         private OrderStatus status;
         [DataMember]
         [Required]
-        [ForeignKey("User")]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
         public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }

@@ -27,7 +27,6 @@ namespace DomainModel
         }
         [DataMember]
         [Required]
-        [ForeignKey("ProductPrice")]
         public Guid ProductPriceId { get; set; }
         public virtual ProductPrice Price { get; set; }
         [DataMember]

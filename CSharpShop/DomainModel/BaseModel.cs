@@ -15,7 +15,6 @@ namespace DomainModel
     public abstract class BaseModel : INotifyPropertyChanged, IDataErrorInfo
     {
         [DataMember]
-        [Key]
         public Guid Id { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
