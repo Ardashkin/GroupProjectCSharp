@@ -1,0 +1,36 @@
+﻿<Window x:Class="Client.View.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client.View"
+        mc:Ignorable="d"
+        Title="Registration" Height="456" Width="355" Background="AliceBlue" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Enter your information" HorizontalAlignment="Center" FontSize="20" Padding="5" />
+        <TextBox  x:Name="NameTextBox" Text="Name" VerticalAlignment="Bottom"  Margin="10" Grid.Row="1" Height="32"/>
+        <TextBox  x:Name="SurnameTextBox" Text="Surname" VerticalAlignment="Bottom"  Margin="10" Grid.Row="2" Height="32"/>
+        <TextBox  x:Name="LoginTextBox" Text="Login" VerticalAlignment="Bottom"  Margin="10" Grid.Row="3" Height="32"/>
+        <TextBox  x:Name="passwodTextBox" Text="Password" VerticalAlignment="Bottom"  Margin="10" Grid.Row="4" Height="32"/>
+        <TextBox  x:Name="Phone" Text="Phone" VerticalAlignment="Bottom"  Margin="10" Grid.Row="5" Height="32"/>
+        <TextBox  x:Name="AdressTextBox" Text="Address" VerticalAlignment="Bottom"  Margin="10" Grid.Row="6" Height="32"/>
+        <Grid Grid.Row="7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonRegistrate" Content="Registrate" FontSize="20" VerticalAlignment="Stretch" Grid.Column="0" Margin="10,7" Background="#FF69D7F7"/>
+            <Button x:Name="ButtonBack" Content="Back" FontSize="20" VerticalAlignment="Stretch" Grid.Column="1" Margin="10,7" Background="#FF69D7F7" Click="ButtonBackClick"/>
+        </Grid>
+    </Grid>
+</Window>
