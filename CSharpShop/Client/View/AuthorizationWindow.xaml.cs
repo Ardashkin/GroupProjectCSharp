@@ -21,9 +21,9 @@ namespace Client.View
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthorizationWindow : Window
     {
-        public MainWindow()
+        public AuthorizationWindow()
         {
             InitializeComponent();
 
@@ -48,5 +48,29 @@ namespace Client.View
                 MessageBox.Show(p.Title);
             }           
         }
+
+        public void ButtonRegestrationClick(object sender, RoutedEventArgs e)
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+            this.Close();
+        }
+
+        private void ButtonSignInClick(object sender, RoutedEventArgs e)
+        {
+            if (loginTextBox.Text == "admin")
+            {
+                AdminOrdersPageWindow adminWindow = new AdminOrdersPageWindow();
+                adminWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                OrdersPageWindow mainWindow = new OrdersPageWindow();
+                mainWindow.Show();
+                this.Close();
+            }
+        }
+
     }
 }
