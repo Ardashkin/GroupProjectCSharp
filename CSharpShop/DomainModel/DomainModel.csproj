@@ -45,6 +45,7 @@
     <Compile Include="BaseModel.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderProduct.cs" />
+    <Compile Include="OrderStatus.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductPrice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

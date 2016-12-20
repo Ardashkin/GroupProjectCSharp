@@ -13,6 +13,7 @@ namespace Client.ViewModel
         protected RelayCommand openViewCommand;
         protected RelayCommand openedViewCommand;
         protected RelayCommand removeItemCommand;
+        protected RelayCommand editItemCommand;
 
         public virtual ICommand OpenViewCommand
         {
@@ -25,8 +26,6 @@ namespace Client.ViewModel
                 return openViewCommand;
             }
         }
-        protected abstract void OpenViewCommandExecute(object obj);
-
         public virtual ICommand OpenedViewCommand
         {
             get
@@ -38,8 +37,6 @@ namespace Client.ViewModel
                 return openedViewCommand;
             }
         }
-        protected abstract void OpenedViewCommandExecute(object obj);
-
         public virtual ICommand RemoveItemCommand
         {
             get
@@ -51,11 +48,29 @@ namespace Client.ViewModel
                 return removeItemCommand;
             }
         }
+        public virtual ICommand EditItemCommand
+        {
+            get
+            {
+                if (editItemCommand == null)
+                {
+                    editItemCommand = new RelayCommand(EditItemCommandExecute, EditItemCommandCanExecute);
+                }
+                return editItemCommand;
+            }
+        }
+        protected virtual bool EditItemCommandCanExecute(object obj)
+        {
+            return selectedItem != default(T);
+        }
         protected virtual bool RemoveItemCommandCanExecute(object obj)
         {
             return selectedItem != default(T);
         }
+        public abstract void GetData();
+        protected abstract void OpenViewCommandExecute(object obj);
+        protected abstract void EditItemCommandExecute(object obj);
+        protected abstract void OpenedViewCommandExecute(object obj);
         protected abstract void RemoveItemCommandExecute(object obj);
-        protected abstract void RemoveItemCommandApply(bool flag);
     }
 }

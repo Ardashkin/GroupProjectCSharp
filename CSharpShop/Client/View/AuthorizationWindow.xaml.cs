@@ -29,16 +29,24 @@ namespace Client.View
 
             //!!!!!!!!for test only!!!!!!!!!!!!!!
             //in real project connect to Db with wcf services ONLY
-            var sc_product = new DataAccessLayer.ShopContext<Product>();
-            sc_product.Items.Add(new Product());
-            var sc_user = new DataAccessLayer.ShopContext<User>();
-            sc_user.Items.Add(new User());
-            var sc_order = new DataAccessLayer.ShopContext<Order>();
-            sc_order.Items.Add(new Order());
             var sc_op = new DataAccessLayer.ShopContext<OrderProduct>();
             sc_op.Items.Add(new OrderProduct());
-            var sc_price = new DataAccessLayer.ShopContext<ProductPrice>();
-            sc_price.Items.Add(new ProductPrice());
+            var sc_order = new DataAccessLayer.ShopContext<Order>();
+            sc_order.Items.Add(new Order());
+            var service = new ServiceReferenceProduct.ShopServiceBaseOf_ProductClient();
+            var vmAdd = new ViewModelProductAdd(service);
+            //service.Create(new ProductPrice
+            //{
+            //    Id = Guid.NewGuid(),
+            //    EffectiveDate = DateTime.Now,
+            //    Price = 1.06
+            //});
+            var vm = new ViewModelProductShow(service);
+            vm.GetData();
+            foreach (var p in vm.ObsCollection)
+            {
+                MessageBox.Show(p.Title);
+            }           
         }
 
         public void ButtonRegestrationClick(object sender, RoutedEventArgs e)

@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainModel;
+using Client.Component;
 
 namespace Client.ViewModel
 {
-    public class ViewModelProductShow : ViewModelShow<Product>
+    public class ViewModelUserShow : ViewModelShow<User>
     {
-        private readonly ServiceReferenceProduct.IShopServiceBaseOf_Product shopService;
-
-        public ViewModelProductShow(ServiceReferenceProduct.IShopServiceBaseOf_Product shopService)
+        private readonly ServiceReferenceUser.IShopServiceBaseOf_User userService;
+        public ViewModelUserShow(ServiceReferenceUser.IShopServiceBaseOf_User userService)
         {
-            this.shopService = shopService;
+            this.userService = userService;
         }
         public override void GetData()
         {
             Reset();
-            foreach (var element in shopService.GetItems())
+            foreach (var element in userService.GetItems())
             {
                 obsCollection.Add(element);
             }
@@ -36,18 +35,23 @@ namespace Client.ViewModel
         {
             if (RemoveItemCommandCanExecute(obj))
             {
-                shopService.Delete(SelectedItem);
+                userService.Delete(SelectedItem);
                 GetData();
             }
         }
         protected override void EditItemCommandExecute(object obj)
         {
-            Product product = new Product
+            User user = new User
             {
                 Id = Guid.NewGuid(),
-                Description = this.SelectedItem.Description,
-                ProductPriceId = this.SelectedItem.ProductPriceId,
-                Title = this.SelectedItem.Title
+                Address = this.SelectedItem.Address,
+                FirstName = this.SelectedItem.FirstName,
+                LastName = this.SelectedItem.LastName,
+                Login = this.SelectedItem.Login,
+                Password = this.SelectedItem.Password,
+                Patronimic = this.SelectedItem.Patronimic,
+                Phone = this.SelectedItem.Phone,
+                UserType = this.SelectedItem.UserType
             };
             GetData();
         }

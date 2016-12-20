@@ -56,31 +56,23 @@ namespace Server
         }
         protected virtual void OnCreateEvent(TEntity item)
         {
-            if (CreateEvent != null)
-            {
-                CreateEvent(this, new EntryEventArgs<TEntity>(item));
-            }
+            EntryCreateEventHandler<TEntity> handler = CreateEvent;
+            handler?.Invoke(this, new EntryEventArgs<TEntity>(item));
         }
         protected virtual void OnUpdateEvent(TEntity item)
         {
-            if (UpdateEvent != null)
-            {
-                UpdateEvent(this, new EntryEventArgs<TEntity>(item));
-            }
+            EntryUpdateEventHandler<TEntity> handler = UpdateEvent;
+            handler?.Invoke(this, new EntryEventArgs<TEntity>(item));
         }
         protected virtual void OnDeleteEvent(TEntity item)
         {
-            if (DeleteEvent != null)
-            {
-                DeleteEvent(this, new EntryEventArgs<TEntity>(item));
-            }
+            EntryDeleteEventHandler<TEntity> handler = DeleteEvent;
+            handler?.Invoke(this, new EntryEventArgs<TEntity>(item));
         }
         protected virtual void OnSaveEvent(TEntity item)
         {
-            if (SaveEvent != null)
-            {
-                SaveEvent(this, new EntryEventArgs<TEntity>(item));
-            }
+            EntrySaveDataEventHandler<TEntity> handler = SaveEvent;
+            handler?.Invoke(this, new EntryEventArgs<TEntity>(item));
         }
         protected virtual void OnCreateEventHandler(object sender, EntryEventArgs<TEntity> e)
         {

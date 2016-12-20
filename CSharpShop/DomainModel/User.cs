@@ -11,7 +11,7 @@ using System.Runtime.Serialization;
 namespace DomainModel
 {
     [DataContract]
-    public sealed class User : BaseModel
+    public class User : BaseModel
     {
         private string firstName;
         private string lastName;

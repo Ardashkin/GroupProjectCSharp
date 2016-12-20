@@ -5,17 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DomainModel
 {
     [DataContract]
-    public sealed class Order : BaseModel
+    public class Order : BaseModel
     {
+        private OrderStatus status;
         [DataMember]
         [Required]
         public Guid UserId { get; set; }
+        public virtual User User { get; set; }
+        public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
         [DataMember]
-        public IEnumerable<OrderProduct> OrderProducts { get; set; }
+        public OrderStatus Status {
+            get { return status; }
+            set
+            {
+                status = value;
+                OnPropertyChanged(nameof(Status));
+            }
+        }
         public Order()
         {
             OrderProducts = new List<OrderProduct>();
