@@ -13,7 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Button Name="BackButton" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="40" Background="AliceBlue" UseLayoutRounding="True" BorderBrush="AliceBlue" Click="BackButtonClick">
-            <Image Source="Client/Resources/LeftArrow.jpg"  ></Image>
+            <Image Source="C:\Users\Alexandr\Documents\GitHub\GroupProjectCSharp\CSharpShop\Client\Resources/LeftArrow.jpg"  ></Image>
         </Button>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -44,7 +44,15 @@
                 <TextBlock Text="Your cart" HorizontalAlignment="Center" FontSize="20"/>
                 <ListView  Grid.Row="1"/>
             </Grid>
-            <Label Content="Order amount: 100$" Grid.Row="2" HorizontalAlignment="Center" FontSize="20"/>
+            <Grid  Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+              </Grid.ColumnDefinitions>
+                <Label Content="Order amount:" Grid.Column="0" HorizontalAlignment="Right" FontSize="20"/>
+                <Label Content="100$" Grid.Column="1" HorizontalAlignment="Left" FontSize="20"/>
+            </Grid>
+            
         </Grid>
     </Grid>
 </Window>

@@ -18,10 +18,17 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button Name="FindOrderButton" Grid.Row="0" Content="Find order"  VerticalAlignment="Center" Height="50" Margin="10,0,10,10" Background="#FF69D7F7"/>
-            <Button Name="CreateOrderButton" Grid.Row="1" Content="Create order" VerticalAlignment="Center" Height="50" Margin="10" Background="#FF69D7F7" Click="CreateOrderButtonClick"/>
-            <Button Name="OpenOrderButton" Grid.Row="2" Content="Open order" VerticalAlignment="Center" Height="50" Margin="10" Background="#FF69D7F7" Click="OpenOrderButtonClick"/>
-            <Button Name="DeleteOrderButton" Grid.Row="3" Content="Delete order" VerticalAlignment="Center" Height="50" Margin="10" Background="#FF69D7F7"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="0" VerticalAlignment="Center" Margin="5, 5, 3, 5" Grid.Column="0" Height="30"/>
+                <Button Name="FindOrderButton" Grid.Row="0" Content="Find order"  VerticalAlignment="Center" Height="30" Margin="3,5,0,5" Background="#FF69D7F7" Grid.Column="1"/>
+            </Grid>
+            <Button Name="CreateOrderButton" Grid.Row="1" Content="Create order" VerticalAlignment="Center" Height="50" Margin="10,10,0,10" Background="#FF69D7F7" Click="CreateOrderButtonClick" FontSize="18"/>
+            <Button Name="OpenOrderButton" Grid.Row="2" Content="Open order" VerticalAlignment="Center" Height="50" Margin="10,10,0,10" Background="#FF69D7F7" Click="OpenOrderButtonClick" FontSize="18"/>
+            <Button Name="DeleOrderButton"  Grid.Row="3" Content="Delete order" VerticalAlignment="Center" Height="50" Margin="10,10,0,10" Background="#FF69D7F7" FontSize="18" Click="DeleteButtonClick" />
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
@@ -30,7 +37,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Text="Your orders" FontSize="20" HorizontalAlignment="Center"/>
-            <ListBox Grid.Row="1" x:Name="OrdersListBox" VerticalAlignment="Stretch"   Margin="10" />
+            <ListBox  x:Name="OrdersListBox" Grid.Row="1" VerticalAlignment="Stretch"   Margin="10" />
         </Grid>
     </Grid>
 </Window>

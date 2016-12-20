@@ -72,5 +72,10 @@ namespace Client.View
             }
         }
 
+        public void TextBoxGotFocus(object sender, RoutedEventArgs e)
+        {
+            ((TextBox)sender).Text = "";
+        }
+
     }
 }

@@ -28,16 +28,21 @@ namespace Client.View
         private void CreateOrderButtonClick(object sender, RoutedEventArgs e)
         {
             OrderPageWindow orderPage = new OrderPageWindow();
+            orderPage.Show();
+            this.Close();            
+        }
+        private void OpenOrderButtonClick(object sender, RoutedEventArgs e)
+        {
+            OrderPageWindow orderPage = new OrderPageWindow();
+            orderPage.ProductsInOrderExpander.Visibility = Visibility.Hidden;
             orderPage.ProductsInOrderExpander.IsEnabled = false;
             orderPage.ProductsInOrderExpander.IsExpanded = false;
             orderPage.Show();
             this.Close();
         }
-        private void OpenOrderButtonClick(object sender, RoutedEventArgs e)
+        private void DeleteButtonClick(object sender, RoutedEventArgs e)
         {
-            OrderPageWindow orderPage = new OrderPageWindow();
-            orderPage.Show();
-            this.Close();
+            
         }
     }
 }
