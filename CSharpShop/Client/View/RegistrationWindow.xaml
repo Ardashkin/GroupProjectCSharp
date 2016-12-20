@@ -18,12 +18,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="Enter your information" HorizontalAlignment="Center" FontSize="20" Padding="5" />
-        <TextBox  x:Name="NameTextBox" Text="Name" VerticalAlignment="Bottom"  Margin="10" Grid.Row="1" Height="32"/>
-        <TextBox  x:Name="SurnameTextBox" Text="Surname" VerticalAlignment="Bottom"  Margin="10" Grid.Row="2" Height="32"/>
-        <TextBox  x:Name="LoginTextBox" Text="Login" VerticalAlignment="Bottom"  Margin="10" Grid.Row="3" Height="32"/>
-        <TextBox  x:Name="passwodTextBox" Text="Password" VerticalAlignment="Bottom"  Margin="10" Grid.Row="4" Height="32"/>
-        <TextBox  x:Name="Phone" Text="Phone" VerticalAlignment="Bottom"  Margin="10" Grid.Row="5" Height="32"/>
-        <TextBox  x:Name="AdressTextBox" Text="Address" VerticalAlignment="Bottom"  Margin="10" Grid.Row="6" Height="32"/>
+        <TextBox  x:Name="NameTextBox" Text="Name" VerticalAlignment="Bottom"  Margin="10" Grid.Row="1" Height="32" GotFocus="TextBoxGotFocus"/>
+        <TextBox  x:Name="SurnameTextBox" Text="Surname" VerticalAlignment="Bottom"  Margin="10" Grid.Row="2" Height="32" GotFocus="TextBoxGotFocus"/>
+        <TextBox  x:Name="LoginTextBox" Text="Login" VerticalAlignment="Bottom"  Margin="10" Grid.Row="3" Height="32" GotFocus="TextBoxGotFocus"/>
+        <TextBox  x:Name="PasswodTextBox" Text="Password" VerticalAlignment="Bottom"  Margin="10" Grid.Row="4" Height="32" GotFocus="TextBoxGotFocus"/>
+        <TextBox  x:Name="PhoneTextBox" Text="Phone" VerticalAlignment="Bottom"  Margin="10" Grid.Row="5" Height="32" GotFocus="TextBoxGotFocus"/>
+        <TextBox  x:Name="AdressTextBox" Text="Address" VerticalAlignment="Bottom"  Margin="10" Grid.Row="6" Height="32" GotFocus="TextBoxGotFocus"/>
         <Grid Grid.Row="7">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
