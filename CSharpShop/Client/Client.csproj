@@ -93,14 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ViewModelAdd.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="ViewModel\ViewModelEdit.cs" />
-    <Compile Include="ViewModel\ViewModelOrderAdd.cs" />
-    <Compile Include="ViewModel\ViewModelOrderEdit.cs" />
-    <Compile Include="ViewModel\ViewModelOrderShow.cs" />
-    <Compile Include="ViewModel\ViewModelProductAdd.cs" />
-    <Compile Include="ViewModel\ViewModelProductEdit.cs" />
     <Compile Include="ViewModel\ViewModelProductShow.cs" />
     <Compile Include="ViewModel\ViewModelShow.cs" />
     <Compile Include="View\AdminOrdersPageWindow.xaml.cs">
@@ -127,16 +120,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="ViewModel\ViewModelUserAdd.cs" />
-    <Compile Include="ViewModel\ViewModelUserEdit.cs" />
-    <Compile Include="ViewModel\ViewModelUserShow.cs" />
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-=======
     <Compile Include="View\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
->>>>>>> 32b2ed445a47f6e1d478ca98742de5805f367827
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\OrderPageWindow.xaml">

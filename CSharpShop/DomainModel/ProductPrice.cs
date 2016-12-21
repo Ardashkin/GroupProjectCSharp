@@ -12,30 +12,12 @@ namespace DomainModel
     [DataContract]
     public class ProductPrice : BaseModel
     {
-        private double price;
-        private DateTime effectiveDate;
         [DataMember]
         [Required(ErrorMessage = "Price is required")]
-        public double Price
-        {
-            get { return price; }
-            set
-            {
-                price = value;
-                OnPropertyChanged(nameof(this.Price));
-            }
-        }
+        public double Price { get; set; }
         [DataMember]
-        [Required(ErrorMessage ="Effective date is required")]
-        public DateTime EffectiveDate
-        {
-            get { return effectiveDate; }
-            set
-            {
-                effectiveDate = value;
-                OnPropertyChanged(nameof(this.EffectiveDate));
-            }
-        }
+        [Required(ErrorMessage = "Effective date is required")]
+        public DateTime EffectiveDate { get; set; }
         public override string ToString()
         {
             return String.Format("Id->{0}\nPrice->{1}\nEffectiveDate->{2}\n",

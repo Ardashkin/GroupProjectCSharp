@@ -12,33 +12,15 @@ namespace DomainModel
     [DataContract]
     public class Product : BaseModel
     {
-        private string title;
-        private string description;
         [DataMember]
         [Required(ErrorMessage = "Title is required")]
-        public string Title
-        {
-            get { return title; }
-            set
-            {
-                title = value;
-                OnPropertyChanged(nameof(this.Title));
-            }
-        }
+        public string Title { get; set; }
         [DataMember]
         [Required]
         public Guid ProductPriceId { get; set; }
         public virtual ProductPrice Price { get; set; }
         [DataMember]
-        public string Description
-        {
-            get { return description; }
-            set
-            {
-                description = value;
-                OnPropertyChanged(nameof(this.Description));
-            }
-        }
+        public string Description { get; set; }
         public override string ToString()
         {
             return String.Format("Id->{0}\nProductPriceId->{1}\nTitle->{2}\nDescription->{2}\n",

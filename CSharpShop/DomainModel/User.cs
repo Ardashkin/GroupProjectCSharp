@@ -10,101 +10,29 @@ using System.Runtime.Serialization;
 
 namespace DomainModel
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public class User : BaseModel
     {
-        private string firstName;
-        private string lastName;
-        private string patronimic;
-        private string login;
-        private string password;
-        private string phone;
-        private string address;
-        private UserType userType;
         [DataMember]
-        public string FirstName
-        {
-            get { return firstName; }
-            set
-            {
-                firstName = value;
-                OnPropertyChanged(nameof(this.FirstName));
-            }
-        }
+        public string FirstName { get; set; }
         [DataMember]
-        public string LastName
-        {
-            get { return lastName; }
-            set
-            {
-                lastName = value;
-                OnPropertyChanged(nameof(this.LastName));
-            }
-        }
+        public string LastName { get; set; }
         [DataMember]
-        public string Patronimic
-        {
-            get { return patronimic; }
-            set
-            {
-                patronimic = value;
-                OnPropertyChanged(nameof(this.Patronimic));
-            }
-        }
+        public string Patronimic { get; set; }
         [DataMember]
         [Required(ErrorMessage = "Login is required")]
-        public string Login
-        {
-            get { return login; }
-            set
-            {
-                login = value;
-                OnPropertyChanged(nameof(this.Login));
-            }
-        }
+        public string Login { get; set; }
         [DataMember]
         [Required(ErrorMessage = "Password is required")]
-        public string Password
-        {
-            get { return password; }
-            set
-            {
-                password = value;
-                OnPropertyChanged(nameof(this.Password));
-            }
-        }
+        public string Password { get; set; }
         [DataMember]
         [Required(ErrorMessage = "Phone is required")]
-        public string Phone
-        {
-            get { return phone; }
-            set
-            {
-                phone = value;
-                OnPropertyChanged(nameof(this.Phone));
-            }
-        }
+        public string Phone { get; set; }
         [DataMember]
-        public string Address
-        {
-            get { return address; }
-            set
-            {
-                address = value;
-                OnPropertyChanged(nameof(this.Address));
-            }
-        }
+        public string Address { get; set; }
         [DataMember]
         [Required]
-        public UserType UserType
-        {
-            get { return userType; }
-            set
-            {
-                userType = value;
-                OnPropertyChanged(nameof(this.UserType));
-            }
-        }
+        public UserType UserType { get; set; }
         public override string ToString()
         {
             return String.Format("Id->{0}\nFirst name->{1}\nLast name->{2}\nPatronimic->{3}\nLogin->{4}\nPassword->{5}\nPhone->{6}\nAddress->{7}\nUser type->{8}\n",

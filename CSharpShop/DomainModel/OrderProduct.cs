@@ -12,7 +12,6 @@ namespace DomainModel
     [DataContract]
     public class OrderProduct : BaseModel
     {
-        private int quantity;
         [DataMember]
         [Required]
         public Guid OrderId { get; set; }
@@ -22,16 +21,8 @@ namespace DomainModel
         public Guid ProductId { get; set; }
         public virtual Product Product { get; set; }
         [DataMember]
-        [Required(ErrorMessage ="Quantity is required")]
-        public int Quantity
-        {
-            get { return quantity; }
-            set
-            {
-                quantity = value;
-                OnPropertyChanged(nameof(this.Quantity));
-            }
-        }
+        [Required(ErrorMessage = "Quantity is required")]
+        public int Quantity { get; set; }
         public override string ToString()
         {
             return String.Format("Id->{0}\nOrderId->{1}\nProductId->{2}\nQuantity->{3}\n",

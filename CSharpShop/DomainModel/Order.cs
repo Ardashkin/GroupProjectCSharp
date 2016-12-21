@@ -12,21 +12,13 @@ namespace DomainModel
     [DataContract]
     public class Order : BaseModel
     {
-        private OrderStatus status;
         [DataMember]
         [Required]
         public Guid UserId { get; set; }
         public virtual User User { get; set; }
-        public virtual IEnumerable<OrderProduct> OrderProducts { get; set; }
+        public virtual ICollection<OrderProduct> OrderProducts { get; set; }
         [DataMember]
-        public OrderStatus Status {
-            get { return status; }
-            set
-            {
-                status = value;
-                OnPropertyChanged(nameof(Status));
-            }
-        }
+        public OrderStatus Status { get; set; }
         public Order()
         {
             OrderProducts = new List<OrderProduct>();

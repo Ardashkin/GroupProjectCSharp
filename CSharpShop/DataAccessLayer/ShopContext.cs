@@ -8,9 +8,12 @@ using DomainModel;
 
 namespace DataAccessLayer
 {
-    public class ShopContext<TEntity> : DbContext where TEntity : BaseModel, new()
+    public class ShopContext<TEntity> : DbContext where TEntity : BaseModel
     {
         public DbSet<TEntity> Items { get; set; }
-        public ShopContext() : base("LocalConnection") { }
+        public ShopContext() : base("LocalConnection")
+        {
+
+        }
     }
 }
