@@ -9,7 +9,7 @@ using DomainModel;
 
 namespace Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel, new()
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : BaseModel
     {
         protected readonly ShopContext<TEntity> shopContext;
         public Repository()

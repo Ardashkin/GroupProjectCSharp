@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace Server
+namespace ServiceContract
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IShopServiceBase" in both code and config file together.
     [ServiceContract]

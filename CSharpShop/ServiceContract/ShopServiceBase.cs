@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Server.Entry;
+using ServiceContract.Entry;
 using Repository;
 using Logger;
 using DomainModel;
 
-namespace Server
+namespace ServiceContract
 {
-    public class ShopServiceBase<TEntity> : IShopServiceBase<TEntity>, IEntry<TEntity> where TEntity : BaseModel, new()
+    public class ShopServiceBase<TEntity> : IShopServiceBase<TEntity>, IEntry<TEntity> where TEntity : BaseModel
     {
         protected readonly IRepository<TEntity> repository;
 

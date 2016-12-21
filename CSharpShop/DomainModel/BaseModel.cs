@@ -11,24 +11,10 @@ using System.Collections.Specialized;
 
 namespace DomainModel
 {
-    [DataContract]
-    public abstract class BaseModel : INotifyPropertyChanged, IDataErrorInfo
+    [DataContract(IsReference = true)]
+    public abstract class BaseModel
     {
         [DataMember]
         public Guid Id { get; set; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public virtual string this[string propertyName] { get { return Error; } }
-        public virtual string Error
-        {
-            get { return String.Empty; }
-        }
     }
 }
