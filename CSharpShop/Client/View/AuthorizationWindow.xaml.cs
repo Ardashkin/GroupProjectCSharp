@@ -29,7 +29,6 @@ namespace Client.View
 
             //var vm = new ViewModel.ViewModelUserShow();
             //vm.GetData();
-
             //using (var service = new ServiceReference.ShopServiceBaseOf_BaseModelClient())
             //{
 
