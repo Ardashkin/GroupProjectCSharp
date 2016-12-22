@@ -37,6 +37,7 @@ namespace Server.Dependency
 
         private static void ConfigureUnityContainer(IUnityContainer container)
         {
+            container.RegisterType<IShopServiceBase<BaseModel>, ShopServiceBase<BaseModel>>();
             container.RegisterType<IShopServiceBase<Product>, ShopServiceBase<Product>>();
             container.RegisterType<IShopServiceBase<User>, ShopServiceBase<User>>();
             container.RegisterType<IShopServiceBase<Order>, ShopServiceBase<Order>>();

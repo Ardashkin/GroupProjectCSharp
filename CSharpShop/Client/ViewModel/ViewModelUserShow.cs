@@ -10,17 +10,12 @@ namespace Client.ViewModel
 {
     public class ViewModelUserShow : ViewModelShow<User>
     {
-        private readonly ServiceReferenceUser.IShopServiceBaseOf_User userService;
-        public ViewModelUserShow(ServiceReferenceUser.IShopServiceBaseOf_User userService)
-        {
-            this.userService = userService;
-        }
         public override void GetData()
         {
             Reset();
-            foreach (var element in userService.GetItems())
+            foreach (var element in service.GetItems())
             {
-                obsCollection.Add(element);
+                obsCollection.Add((User)element);
             }
         }
         protected override void OpenViewCommandExecute(object obj)
@@ -35,7 +30,7 @@ namespace Client.ViewModel
         {
             if (RemoveItemCommandCanExecute(obj))
             {
-                userService.Delete(SelectedItem);
+                service.Delete(SelectedItem);
                 GetData();
             }
         }

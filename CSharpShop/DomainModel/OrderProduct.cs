@@ -9,7 +9,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DomainModel
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public class OrderProduct : BaseModel
     {
         [DataMember]

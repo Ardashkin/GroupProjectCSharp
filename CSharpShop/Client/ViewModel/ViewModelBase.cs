@@ -13,7 +13,14 @@ namespace Client.ViewModel
     public abstract class ViewModelBase<T> : INotifyPropertyChanged where T : class
     {
         protected readonly ObservableCollection<T> obsCollection;
-        protected T selectedItem;        
+        protected T selectedItem;
+
+        protected readonly ServiceReference.IShopServiceBaseOf_BaseModel service;
+        public ViewModelBase()
+        {
+            obsCollection = new ObservableCollection<T>();
+            this.service = new ServiceReference.ShopServiceBaseOf_BaseModelClient();
+        }
 
         public virtual ObservableCollection<T> ObsCollection
         {
@@ -27,10 +34,6 @@ namespace Client.ViewModel
                 selectedItem = value;
                 OnPropertyChanged(nameof(this.SelectedItem));
             }
-        }
-        public ViewModelBase()
-        {
-            obsCollection = new ObservableCollection<T>();
         }
         protected virtual void Reset()
         {
