@@ -27,8 +27,8 @@ namespace Client.View
         {
             InitializeComponent();
 
-            var vm = new ViewModel.ViewModelUserShow();
-            vm.GetData();
+            //var vm = new ViewModel.ViewModelUserShow();
+            //vm.GetData();
 
             //using (var service = new ServiceReference.ShopServiceBaseOf_BaseModelClient())
             //{
