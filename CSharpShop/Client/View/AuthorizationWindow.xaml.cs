@@ -27,31 +27,34 @@ namespace Client.View
         {
             InitializeComponent();
 
-            using (var service = new ServiceReference.ShopServiceBaseOf_BaseModelClient())
-            {
+            var vm = new ViewModel.ViewModelUserShow();
+            vm.GetData();
 
-                var vm = new ViewModel.ViewModelUserShow();
-                vm.GetData();
+            //using (var service = new ServiceReference.ShopServiceBaseOf_BaseModelClient())
+            //{
 
-                //Guid g1 = Guid.Parse("83f942ea-4a96-4164-bfd2-8f4096e17875");
-                //Model.Income incomne1 = new Model.Income
-                //{
-                //    Id = Guid.NewGuid(),
-                //    ProductId = g1,
-                //    Date = DateTime.Now,
-                //    Origin = "Vasia",
-                //    Price = 1.02,
-                //    Provider = "Izza56",
-                //    Status = IncomeStatus.IsOk
-                //};
-                //service.Create(incomne1);
-                //vm.
-                //vm.GetData();
-                //foreach (var income in vm.ObsCollection)
-                //{
-                //    MessageBox.Show(income.Provider);
-                //}
-            }
+            //    var vm = new ViewModel.ViewModelUserShow();
+            //    vm.GetData();
+
+            //    //Guid g1 = Guid.Parse("83f942ea-4a96-4164-bfd2-8f4096e17875");
+            //    //Model.Income incomne1 = new Model.Income
+            //    //{
+            //    //    Id = Guid.NewGuid(),
+            //    //    ProductId = g1,
+            //    //    Date = DateTime.Now,
+            //    //    Origin = "Vasia",
+            //    //    Price = 1.02,
+            //    //    Provider = "Izza56",
+            //    //    Status = IncomeStatus.IsOk
+            //    //};
+            //    //service.Create(incomne1);
+            //    //vm.
+            //    //vm.GetData();
+            //    //foreach (var income in vm.ObsCollection)
+            //    //{
+            //    //    MessageBox.Show(income.Provider);
+            //    //}
+            //}
 
             //!!!!!!!!for test only!!!!!!!!!!!!!!
             //in real project connect to Db with wcf services ONLY
