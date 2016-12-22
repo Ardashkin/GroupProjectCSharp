@@ -9,12 +9,7 @@ using DomainModel;
 namespace Client.ViewModel
 {
     public class ViewModelOrderEdit : ViewModelEdit<Order>
-    {
-        private readonly ServiceReferenceOrder.IShopServiceBaseOf_Order orderService;
-        public ViewModelOrderEdit(ServiceReferenceOrder.IShopServiceBaseOf_Order orderService)
-        {
-            this.orderService = orderService;
-        }
+    {       
         protected override bool EditItemCommandCanExecute(object obj)
         {
             return this.SelectedItem.OrderProducts.Count() > 0;
@@ -22,7 +17,7 @@ namespace Client.ViewModel
 
         protected override void EditItemCommandExecute(object obj)
         {
-            orderService.Update(SelectedItem);
+            service.Update(SelectedItem);
         }
     }
 }
