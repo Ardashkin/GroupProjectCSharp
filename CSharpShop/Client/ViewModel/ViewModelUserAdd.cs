@@ -10,11 +10,11 @@ namespace Client.ViewModel
 {
     public class ViewModelUserAdd : ViewModelAdd<User>
     {
-        private readonly ServiceReferenceUser.IShopServiceBaseOf_User userService;
-        public ViewModelUserAdd(ServiceReferenceUser.IShopServiceBaseOf_User userService)
-        {
-            this.userService = userService;
-        }
+        //private readonly ServiceReferenceUser.IShopServiceBaseOf_User userService;
+        //public ViewModelUserAdd(ServiceReferenceUser.IShopServiceBaseOf_User userService)
+        //{
+        //    this.userService = userService;
+        //}
         protected override bool AddItemCommandCanExecute(object obj)
         {
             return !(String.IsNullOrEmpty(this.Item.Phone) ||
@@ -23,7 +23,7 @@ namespace Client.ViewModel
         }
         protected override void AddItemCommandExecute(object obj)
         {
-            userService.Create(Item);
+            service.Create(Item);
         }
 
     }

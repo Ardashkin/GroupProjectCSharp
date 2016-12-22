@@ -9,19 +9,14 @@ using DomainModel;
 namespace Client.ViewModel
 {
     public class ViewModelOrderAdd : ViewModelAdd<Order>
-    {
-        private readonly ServiceReferenceOrder.IShopServiceBaseOf_Order orderService;
-        public ViewModelOrderAdd(ServiceReferenceOrder.IShopServiceBaseOf_Order orderService)
-        {
-            this.orderService = orderService;
-        }
+    {       
         protected override bool AddItemCommandCanExecute(object obj)
         {
             return this.Item.OrderProducts.Count() > 0;
         }
         protected override void AddItemCommandExecute(object obj)
         {
-            orderService.Create(Item);
+            service.Create(Item);
         }
     }
 }
