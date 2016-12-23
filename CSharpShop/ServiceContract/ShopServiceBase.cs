@@ -76,19 +76,19 @@ namespace ServiceContract
         }
         protected virtual void OnCreateEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
-            Log.Write("New item of " + e.Item.GetType().Name + " model was created:\n" + e.Item.ToString());
+            Log.For(this).Info("New item of " + e.Item.GetType().Name + " model was created:\n" + e.Item.ToString());
         }
         protected virtual void OnUpdateEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
-            Log.Write("Item of " + e.Item.GetType().Name + " model was updated:\n" + e.Item.ToString());
+            Log.For(this).Info("Item of " + e.Item.GetType().Name + " model was updated:\n" + e.Item.ToString());
         }
         protected virtual void OnDeleteEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
-            Log.Write("Item of " + e.Item.GetType().Name + " model was deleted:\n" + e.Item.ToString());
+            Log.For(this).Info("Item of " + e.Item.GetType().Name + " model was deleted:\n" + e.Item.ToString());
         }
         protected virtual void OnSaveEventHandler(object sender, EntryEventArgs<TEntity> e)
         {
-            Log.Write("Data of " + e.Item.GetType().Name + " model was saved:\n" + e.Item.ToString());
+            Log.For(this).Info("Data of " + e.Item.GetType().Name + " model was saved:\n" + e.Item.ToString());
         }
     }
 }
