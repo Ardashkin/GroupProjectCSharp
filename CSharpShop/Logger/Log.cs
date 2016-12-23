@@ -2,23 +2,32 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.IO;
+using log4net;
+using log4net.Config;
 
 namespace Logger
 {
     public static class Log
     {
-        private static DateTime currentDate;
-        public static void Write(string message)
+        static Log()
         {
-            string path;
-            currentDate = DateTime.Now;
-            path = AppDomain.CurrentDomain.BaseDirectory + @"/" + currentDate.ToShortDateString() + ".log";
-            using (StreamWriter writer = new StreamWriter(path, true))
-            {
-                writer.Write(String.Format("{0} => {1}", currentDate, message));
-            }
+            XmlConfigurator.Configure();
+        }
+
+        public static ILog For(object LoggedObject)
+        {
+            if (LoggedObject != null)
+                return For(LoggedObject.GetType());
+            else
+                return For(null);
+        }
+
+        public static ILog For(Type ObjectType)
+        {
+            if (ObjectType != null)
+                return LogManager.GetLogger(ObjectType.Name);
+            else
+                return LogManager.GetLogger(string.Empty);
         }
     }
 }
