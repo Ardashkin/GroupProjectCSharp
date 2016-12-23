@@ -86,7 +86,7 @@
                         <Label Grid.Column="0" Content="Description" VerticalAlignment="Center" Height="30" FontSize="12" Margin="0" HorizontalContentAlignment="Right"/>
                         <TextBox Grid.Column="1" Margin="10" VerticalAlignment="Stretch" Grid.ColumnSpan="2" />
                     </Grid>
-                    <Button Grid.Row="3" Content="Add"  VerticalAlignment="Center" Height="40" HorizontalAlignment="Center" Width="100"  Background="#FF69D7F7"/>
+                    <Button Grid.Row="3" Content="Add"  VerticalAlignment="Top" Height="40" HorizontalAlignment="Center" Width="100"  Background="#FF69D7F7" Margin="132,5,132,0"/>
                 </Grid>
             </Border>
             <Border Grid.Row="1"  BorderThickness="3" BorderBrush="#FF69D7F7" Margin="0,0,10,0">

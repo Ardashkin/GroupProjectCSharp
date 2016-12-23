@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="eHTJpiQ7SAK70stAfuQkZ7lvMyc=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="lVlY1QwZx4qWXaD+J+5nVpIRego=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IShopServiceBaseOf_Product1">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IShopServiceBaseOf_BaseModel">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IShopServiceBaseOf_Product1</serializedValue>
+          <serializedValue>BasicHttpBinding_IShopServiceBaseOf_BaseModel</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -94,7 +94,7 @@
           <serializedValue>TransportSelected</serializedValue>
         </property>
         <property path="/security/transport/extendedProtectionPolicy/customServiceNames" isComplexType="true" isExplicitlyDefined="false" clrType="System.Security.Authentication.ExtendedProtection.Configuration.ServiceNameElementCollection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>(Коллекция)</serializedValue>
+          <serializedValue>(Collection)</serializedValue>
         </property>
         <property path="/security/transport/realm" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IShopServiceBaseOf_Product1" contract="ServiceReferenceProduct.IShopServiceBaseOf_Product" bindingType="basicHttpBinding" address="http://localhost:60815/ShopServiceProduct.svc" bindingConfiguration="BasicHttpBinding_IShopServiceBaseOf_Product1">
+    <endpoint name="BasicHttpBinding_IShopServiceBaseOf_BaseModel" contract="ServiceReference.IShopServiceBaseOf_BaseModel" bindingType="basicHttpBinding" address="http://localhost:60815/ShopService.svc" bindingConfiguration="BasicHttpBinding_IShopServiceBaseOf_BaseModel">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:60815/ShopServiceProduct.svc</serializedValue>
+          <serializedValue>http://localhost:60815/ShopService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -124,10 +124,10 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IShopServiceBaseOf_Product1</serializedValue>
+          <serializedValue>BasicHttpBinding_IShopServiceBaseOf_BaseModel</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>ServiceReferenceProduct.IShopServiceBaseOf_Product</serializedValue>
+          <serializedValue>ServiceReference.IShopServiceBaseOf_BaseModel</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
@@ -187,7 +187,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_IShopServiceBaseOf_Product1</serializedValue>
+          <serializedValue>BasicHttpBinding_IShopServiceBaseOf_BaseModel</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

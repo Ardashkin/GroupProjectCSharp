@@ -10,11 +10,11 @@ namespace Client.ViewModel
 {
     public class ViewModelUserEdit : ViewModelEdit<User>
     {
-        private readonly ServiceReferenceUser.IShopServiceBaseOf_User userService;
-        public ViewModelUserEdit(ServiceReferenceUser.IShopServiceBaseOf_User userService)
-        {
-            this.userService = userService;
-        }
+        //private readonly ServiceReferenceUser.IShopServiceBaseOf_User userService;
+        //public ViewModelUserEdit(ServiceReferenceUser.IShopServiceBaseOf_User userService)
+        //{
+        //    this.userService = userService;
+        //}
 
         protected override bool EditItemCommandCanExecute(object obj)
         {
@@ -25,7 +25,7 @@ namespace Client.ViewModel
 
         protected override void EditItemCommandExecute(object obj)
         {
-            userService.Update(SelectedItem);
+            service.Update(SelectedItem);
         }
     }
 }

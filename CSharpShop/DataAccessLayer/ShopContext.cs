@@ -13,7 +13,16 @@ namespace DataAccessLayer
         public DbSet<TEntity> Items { get; set; }
         public ShopContext() : base("LocalConnection")
         {
-
+            Configuration.AutoDetectChangesEnabled = true;
+            Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = false;
+            Configuration.ValidateOnSaveEnabled = true;
+            this.Database.CreateIfNotExists();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            Configuration.LazyLoadingEnabled = false;
+            base.Dispose(disposing);
         }
     }
 }

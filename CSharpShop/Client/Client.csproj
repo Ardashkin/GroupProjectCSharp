@@ -43,6 +43,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -68,34 +76,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Component\RelayCommand.cs" />
-    <Compile Include="Service References\ServiceReferenceOrderProduct\Reference.cs">
+    <Compile Include="Component\ViewModelLocator.cs" />
+    <Compile Include="Service References\ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServiceReferenceOrder\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\ServiceReferenceProductPrice\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\ServiceReferenceProduct\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\ServiceReferenceUser\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
+    <Compile Include="ViewModel\ViewModelAdd.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelEdit.cs" />
+    <Compile Include="ViewModel\ViewModelOrderAdd.cs" />
+    <Compile Include="ViewModel\ViewModelOrderEdit.cs" />
+    <Compile Include="ViewModel\ViewModelOrderShow.cs" />
+    <Compile Include="ViewModel\ViewModelProductAdd.cs" />
+    <Compile Include="ViewModel\ViewModelProductEdit.cs" />
     <Compile Include="ViewModel\ViewModelProductShow.cs" />
     <Compile Include="ViewModel\ViewModelShow.cs" />
+    <Compile Include="ViewModel\ViewModelUserAdd.cs" />
+    <Compile Include="ViewModel\ViewModelUserEdit.cs" />
+    <Compile Include="ViewModel\ViewModelUserShow.cs" />
     <Compile Include="View\AdminOrdersPageWindow.xaml.cs">
       <DependentUpon>AdminOrdersPageWindow.xaml</DependentUpon>
     </Compile>
@@ -156,6 +155,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DomainModel.BaseModel.datasource" />
     <None Include="Properties\DataSources\DomainModel.Order.datasource" />
     <None Include="Properties\DataSources\DomainModel.Product.datasource" />
     <None Include="Properties\DataSources\DomainModel.ProductPrice.datasource" />
@@ -165,56 +165,16 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\ServiceReferenceOrderProduct\ShopServiceOrderProduct.wsdl" />
-    <None Include="Service References\ServiceReferenceOrderProduct\ShopServiceOrderProduct.xsd">
+    <None Include="Service References\ServiceReference\ShopService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReferenceOrderProduct\ShopServiceOrderProduct1.xsd">
+    <None Include="Service References\ServiceReference\ShopService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReferenceOrderProduct\ShopServiceOrderProduct2.xsd">
+    <None Include="Service References\ServiceReference\ShopService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReferenceOrder\ShopServiceOrder.wsdl" />
-    <None Include="Service References\ServiceReferenceOrder\ShopServiceOrder.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceOrder\ShopServiceOrder1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceOrder\ShopServiceOrder2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceProductPrice\ShopServiceProductPrice.wsdl" />
-    <None Include="Service References\ServiceReferenceProductPrice\ShopServiceProductPrice.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceProductPrice\ShopServiceProductPrice1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceProductPrice\ShopServiceProductPrice2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceProduct\ShopServiceProduct.wsdl" />
-    <None Include="Service References\ServiceReferenceProduct\ShopServiceProduct.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceProduct\ShopServiceProduct1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceProduct\ShopServiceProduct2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceUser\ShopServiceUser.wsdl" />
-    <None Include="Service References\ServiceReferenceUser\ShopServiceUser.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceUser\ShopServiceUser1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReferenceUser\ShopServiceUser2.xsd">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Service References\ServiceReference\ShopServiceBase_x0060_1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -223,99 +183,35 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReferenceOrderProduct\" />
-    <WCFMetadataStorage Include="Service References\ServiceReferenceOrder\" />
-    <WCFMetadataStorage Include="Service References\ServiceReferenceProductPrice\" />
-    <WCFMetadataStorage Include="Service References\ServiceReferenceProduct\" />
-    <WCFMetadataStorage Include="Service References\ServiceReferenceUser\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrder\ShopServiceOrder.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrder\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrder\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrder\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrderProduct\ShopServiceOrderProduct.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrderProduct\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrderProduct\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceOrderProduct\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProduct\ShopServiceProduct.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProduct\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProduct\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProduct\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProductPrice\ShopServiceProductPrice.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProductPrice\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProductPrice\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceProductPrice\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceUser\ShopServiceUser.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceUser\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceUser\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReferenceUser\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
-      <Project>{5ac6beaa-6c5b-497c-b84c-80822b6aa3a9}</Project>
-      <Name>DataAccessLayer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DomainModel\DomainModel.csproj">
       <Project>{ed540250-e10d-4218-a2d4-2b9ed6193c48}</Project>
       <Name>DomainModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceContract\ServiceContract.csproj">
+      <Project>{59a0ac37-77c3-4522-84d2-e8987cea133f}</Project>
+      <Name>ServiceContract</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\LeftArrow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference\ShopService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

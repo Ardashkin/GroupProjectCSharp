@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="68c3a67c-0927-4e44-9c15-fe90d471c1c5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60815/ShopService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ShopService.disco" MetadataType="Disco" ID="5e4cd53a-9192-4bac-aaa4-534c2814be1f" SourceId="1" SourceUrl="http://localhost:60815/ShopService.svc?disco" />
+    <MetadataFile FileName="ShopService.xsd" MetadataType="Schema" ID="7a58aae5-3f74-4cd3-b9fd-f25c80cb40fa" SourceId="1" SourceUrl="http://localhost:60815/ShopService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ShopService1.xsd" MetadataType="Schema" ID="5cf81284-bbf3-4abb-b339-96591216c97c" SourceId="1" SourceUrl="http://localhost:60815/ShopService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ShopService2.xsd" MetadataType="Schema" ID="11d4d570-9948-4a7a-873a-9ab441a05987" SourceId="1" SourceUrl="http://localhost:60815/ShopService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ShopServiceBase_x0060_1.wsdl" MetadataType="Wsdl" ID="88260c56-704b-4a68-8036-10cac9040bd8" SourceId="1" SourceUrl="http://localhost:60815/ShopService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

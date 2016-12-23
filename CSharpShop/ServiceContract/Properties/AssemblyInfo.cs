@@ -18,7 +18,7 @@ using System.Runtime.InteropServices;
 // для COM-компонентов.  Если требуется обратиться к типу в этой сборке через 
 // COM, задайте атрибуту ComVisible значение TRUE для этого типа.
 [assembly: ComVisible(false)]
-
+[assembly: log4net.Config.XmlConfigurator()]
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
 [assembly: Guid("59a0ac37-77c3-4522-84d2-e8987cea133f")]
 
